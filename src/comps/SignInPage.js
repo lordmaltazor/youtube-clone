@@ -6,6 +6,8 @@ export default function SignInPage() {
     const signInWithGoogle = () => {
         const provider = new firebase.auth.GoogleAuthProvider();
         auth.signInWithPopup(provider);
+
+        alert("You are now signed in to YuoTube!")
     }
 
     return (

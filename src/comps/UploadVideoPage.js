@@ -3,7 +3,7 @@ import '../App.css';
 import firebase from 'firebase';
 import { firestore } from '../FirebaseConfig';
 
-export default function UploadVideoPage({ user, setPage }) {
+export default function UploadVideoPage({ user, videos, setPage }) {
     const videoFileInput = useRef(null);
     const thumbnailFileInput = useRef(null);
 
@@ -73,6 +73,7 @@ export default function UploadVideoPage({ user, setPage }) {
             poster: user.displayName,
             views: 0,
             likes: 0,
+            index: videos.length,
             createdAt: firebase.firestore.FieldValue.serverTimestamp()
         });
 
