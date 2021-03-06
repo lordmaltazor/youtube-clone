@@ -3,7 +3,7 @@ import '../App.css';
 import firebase from 'firebase';
 import { firestore } from '../FirebaseConfig';
 
-export default function UploadVideoPage({ setPage }) {
+export default function UploadVideoPage({ user, setPage }) {
     const videoFileInput = useRef(null);
     const thumbnailFileInput = useRef(null);
 
@@ -16,7 +16,6 @@ export default function UploadVideoPage({ setPage }) {
     const videosRef = firestore.collection('videos');
 
     const bytesToMb = (bytes) => {
-        const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB']
         if (bytes === 0) return 'n/a'
         const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)), 10)
         if (i === 0) return bytes
@@ -66,7 +65,7 @@ export default function UploadVideoPage({ setPage }) {
         // Add video document to firestore
         await videosRef.add({
             title: videoTitle,
-            channel: "placeholder",
+            poster: user.displayName,
             views: 0,
             likes: 0,
             createdAt: firebase.firestore.FieldValue.serverTimestamp()

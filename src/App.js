@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import firebase from 'firebase';
-import { firestore } from './FirebaseConfig';
+import { firestore, auth } from './FirebaseConfig';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
+import SignInPage from './comps/SignInPage';
 import Navbar from './comps/Navbar';
 import HomePage from './comps/HomePage';
 import VideoPage from './comps/VideoPage';
@@ -18,6 +20,10 @@ export default function App() {
 
     const videosRef = firestore.collection('videos');
     const [videoDocs] = useCollectionData(videosRef, { idField: 'id' }); // All the firestore documents of videos
+
+    const [user] = useAuthState(auth);
+
+    //console.log("video docs: " + videoDocs + " | videos:" + videos.length);
 
     useEffect(() => {
         // IMPORTANT!!! When we use the "listAll" function, it returns the items sordet alphabetically a-z. The thumbnail and the video itself therefore have the same name
@@ -38,12 +44,15 @@ export default function App() {
 
     return (
         <div className="app">
-            <Navbar setPage={setPage} />
+            {user && <Navbar setPage={setPage} />}
 
-            {page === 2 ?
-                <UploadVideoPage setPage={setPage} /> :
-                page === 1 ? <VideoPage video={currentVideo} videoDoc={videoDocs[currentVideoIndex]} /> :
-                    <HomePage videos={videos} thumbnails={thumbnails} videoDocs={videoDocs} setPage={setPage} setCurrentVideo={setCurrentVideo} setCurrentVideoIndex={setCurrentVideoIndex} />}
+            {!user ? <SignInPage /> :
+                page === 2 ? <UploadVideoPage user={user} setPage={setPage} /> :
+                    !videoDocs ? (videos.length > 0 && <div className="app loading-app">
+                        <div className="loading-circle"></div>
+                    </div>) :
+                        page === 1 ? <VideoPage video={currentVideo} videoDoc={videoDocs[currentVideoIndex]} /> :
+                            <HomePage videos={videos} thumbnails={thumbnails} videoDocs={videoDocs} setPage={setPage} setCurrentVideo={setCurrentVideo} setCurrentVideoIndex={setCurrentVideoIndex} />}
         </div>
     );
 }

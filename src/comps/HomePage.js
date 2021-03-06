@@ -7,7 +7,7 @@ export default function HomePage({ videos, thumbnails, videoDocs, setPage, setCu
     return (
         <div className="homepage">
             <div className="videos">
-                {videos.map((video, index) => <VideoThumbnail key={index} title={video.name} thumbnail={thumbnails[index]} videoDoc={videoDocs && videoDocs[index]} onClick={() => {
+                {videos.map((video, index) => <VideoThumbnail key={index} title={video.name} thumbnail={thumbnails[index]} videoDoc={videoDocs[index]} onClick={() => {
                     setCurrentVideoIndex(index);
                     setCurrentVideo(video);
                     setPage(1);

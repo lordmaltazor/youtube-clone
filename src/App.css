@@ -1,4 +1,4 @@
-html, body, .app
+html, body, .app, .sign-in-page
 {
   max-width: 100vw;
   min-height: 100vh;
@@ -12,6 +12,46 @@ html, body, .app
   background: rgb(24, 24, 24);
   display: flex;
   flex-direction: column;
+}
+
+.loading-app
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-in-page
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-in-title
+{
+  color: white;  
+  font-size: 60px;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.sign-in-button
+{
+  background: red;
+  color: white;
+  padding: 15px 35px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-size: 25px;
+  transition: background 0.15s;
+}
+
+.sign-in-button:hover
+{
+  background: rgb(210, 0, 0);
 }
 
 .navbar
@@ -72,12 +112,12 @@ html, body, .app
   margin: 20px;
   padding: 20px 0 0 0;
   width: 500px;
-  height: 500px;
+  height: 550px;
   border: none;
   outline: none;
   border-radius: 15px;
   cursor: pointer;
-  transition: background 0.15s;
+  transition: background 0.25s;
 }
 
 .video-thumbnail:hover
@@ -108,7 +148,7 @@ html, body, .app
 .video-page
 {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -118,11 +158,13 @@ html, body, .app
   display: flex;
   justify-content: center;
   width: 100%;
-  height: calc(100% - 150px);
+  height: calc(100vh - 250px);
 }
 
 video
 {
+  height: 100%;
+  width: 100%;  
   outline: none;
 }
 
@@ -133,12 +175,6 @@ video
   margin: 15px auto;
   width: 75%;
   height: 100%;
-}
-
-.video-stats
-{
-  display: flex;
-  flex-direction: column;
 }
 
 .video-stat
@@ -281,4 +317,9 @@ video
   color: white;
   font-size: 30px;
   font-family: sans-serif;
+}
+
+.gray-text
+{
+  color: rgb(161, 161, 161);
 }
