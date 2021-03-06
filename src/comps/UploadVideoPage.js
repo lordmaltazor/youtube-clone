@@ -55,16 +55,21 @@ export default function UploadVideoPage({ user, setPage }) {
         setUploadingVideo(true);
 
         // Upload video to firebase storage
-        const videoStorageRef = firebase.storage().ref().child(`videos/${videoTitle}`);
+        const videoStorageRef = firebase.storage().ref().child(`videos/${video.name}`);
         await videoStorageRef.put(video);
 
         // Upload thumbnail to firebase storage
-        const thumbnailStorageRef = firebase.storage().ref().child(`thumbnails/${videoTitle}`);
+        const thumbnailStorageRef = firebase.storage().ref().child(`thumbnails/${video.name}`);
         await thumbnailStorageRef.put(thumbnail);
 
         // Add video document to firestore
+        const videoURL = await videoStorageRef.getDownloadURL();
+        const thumbnailURL = await thumbnailStorageRef.getDownloadURL();
+
         await videosRef.add({
             title: videoTitle,
+            videoURL: videoURL,
+            thumbnailURL: thumbnailURL,
             poster: user.displayName,
             views: 0,
             likes: 0,
