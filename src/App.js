@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import firebase from 'firebase';
 import { firestore, auth } from './FirebaseConfig';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
 import SignInPage from './comps/SignInPage';
 import Navbar from './comps/Navbar';
 import HomePage from './comps/HomePage';
@@ -25,6 +23,7 @@ export default function App() {
             return;
         }
 
+        // Get all firestore documents
         videosRef.get().then((documents) => {
             let arr = [];
 

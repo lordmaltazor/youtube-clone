@@ -16,10 +16,14 @@ export default function UploadVideoPage({ user, videos, setPage }) {
     const videosRef = firestore.collection('videos');
 
     const bytesToMb = (bytes) => {
-        if (bytes === 0) return 'n/a'
         const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)), 10)
-        if (i === 0) return bytes
-        return (bytes / (1024 ** i)).toFixed(1)
+
+        if (i === 0) {
+            return bytes;
+        }
+        else {
+            return (bytes / (1024 ** i)).toFixed(1);
+        }
     }
 
     const updateVideo = (e) => {
@@ -46,7 +50,7 @@ export default function UploadVideoPage({ user, videos, setPage }) {
     }
 
     const postVideo = async () => {
-        if (videoTitle == '') {
+        if (videoTitle === '') {
             alert("You have to enter a video title!");
 
             return;
@@ -86,15 +90,15 @@ export default function UploadVideoPage({ user, videos, setPage }) {
         <div className="upload-video-page">
             <h1 className="upload-video-title">Upload a new video to yuotube:</h1>
 
-            {!video && <button className="select-file-button" onClick={() => videoFileInput.current.click()}>Choose Video</button>}
-            {!thumbnail && <button className="select-file-button" onClick={() => thumbnailFileInput.current.click()}>Choose Thumbnail</button>}
+            {!video && <button className="button select-file-button" onClick={() => videoFileInput.current.click()}>Choose Video</button>}
+            {!thumbnail && <button className="button select-file-button" onClick={() => thumbnailFileInput.current.click()}>Choose Thumbnail</button>}
 
             <input className="file-input" ref={videoFileInput} onChange={updateVideo} type="file" accept="video/*" />
             <input className="file-input" ref={thumbnailFileInput} onChange={updateThumbnail} type="file" accept="image/*" />
 
             {video && thumbnail && <input className="video-title-input" onChange={updateVideoTitle} type="text" placeholder="Video title" />}
 
-            {video && thumbnail && <button className="post-video-button" onClick={postVideo}>Post</button>}
+            {video && thumbnail && <button className="button post-video-button" onClick={postVideo}>Post</button>}
 
             {uploadingVideo && <div className="uploading-video-modal">
                 <div className="loading-circle"></div>

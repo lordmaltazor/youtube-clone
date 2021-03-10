@@ -7,6 +7,23 @@ html, body, .app, .sign-in-page
   overflow-x: hidden;
 }
 
+.button
+{
+  background: red;
+  color: white;
+  padding: 15px 35px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-size: 1.65rem;
+  transition: background 0.15s;
+}
+
+.button:hover
+{
+  background: rgb(210, 0, 0);
+}
+
 .app
 {
   background: rgb(24, 24, 24);
@@ -29,34 +46,56 @@ html, body, .app, .sign-in-page
   align-items: center;
 }
 
-.sign-in-title
+.sign-in-title, .sign-in-description
 {
   color: white;  
-  font-size: 60px;
+  margin: 0 20px 30px 20px;
+  font-size: 4rem;
   font-family: sans-serif;
   text-align: center;
 }
 
-.sign-in-button
+.sign-in-description
 {
-  background: red;
-  color: white;
-  padding: 15px 35px;
-  border: none;
-  outline: none;
-  border-radius: 10px;
-  font-size: 25px;
-  transition: background 0.15s;
+  font-size: 2rem;
 }
 
-.sign-in-button:hover
+.sign-in-description a
 {
-  background: rgb(210, 0, 0);
+  color: red;
+}
+
+.sign-in-description a:hover
+{
+  color: rgb(207, 1, 1);
+}
+
+.sign-in-button
+{
+  margin: 0 15px 0 15px;
+}
+
+@media screen and (max-width: 700px)
+{
+  .sign-in-title
+  {
+    font-size: 2.75rem;
+  }
+  
+  .sign-in-description
+  {
+    font-size: 1.35rem;
+  }
+
+  .sign-in-button
+  {
+    font-size: 1.5rem;
+  }
 }
 
 .navbar
 {
-  background: rgb(32, 32, 32);
+  background: rgb(37, 37, 37);
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -71,7 +110,7 @@ html, body, .app, .sign-in-page
   margin: 0 20px;
   border: none;
   outline: none;
-  font-size: 25px;
+  font-size: 1.65rem;
   font-family: sans-serif;
   cursor: pointer;
   transition: color 0.15s;
@@ -82,10 +121,48 @@ html, body, .app, .sign-in-page
   color: rgb(218, 218, 218);
 }
 
-.title
+.navbar-upload-button
 {
-  font-size: 30px;
+  margin-right: 20px;
+}
+
+.navbar-title
+{
+  margin-right: 0px;
+  font-size: 2rem;
   font-weight: 700;
+}
+
+@media screen and (max-width: 420px)
+{
+  .navbar-upload-button, .navbar-sign-out-button
+  {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 650px)
+{  
+  .navbar-button
+  {
+    font-size: 1.4rem;
+  }
+
+  .navbar-title
+  {
+    font-size: 1.65rem;
+  }
+
+  .navbar-home-button
+  {
+    display: none;
+  }
+  
+  .navbar-upload-button
+  {
+    padding: 15px 25px;
+    font-size: 1.25rem;
+  }
 }
 
 .navbar-spacer
@@ -106,8 +183,18 @@ html, body, .app, .sign-in-page
 .no-videos-message
 {
   color: white;
-  font-size: 30px;
+  width: 60vw;
+  font-size: 2rem;
   font-family: sans-serif;
+  text-align: center;
+}
+
+@media screen and (max-width: 700px)
+{
+  .no-videos-message
+  {
+    font-size: 1.5rem;
+  }
 }
 
 .video-thumbnail
@@ -145,18 +232,32 @@ html, body, .app, .sign-in-page
   object-fit: contain;
 }
 
-.video-thumbnail-title, .video-thumbnail-views
+.video-thumbnail-text
 {
   color: white;
   margin: 5px 0;
-  font-size: 25px;
+  font-size: 1.65rem;
+}
+
+@media screen and (max-width: 600px)
+{
+  .video-thumbnail
+  {
+    width: 90vw;
+    margin: 20px 0;
+    padding: 0 10px 10px 10px;
+  }
+
+  .video-thumbnail-text
+  {
+    font-size: 1.2rem;
+  }
 }
 
 .video-page
 {
-  width: 100%;
+  width: 100%;    
   overflow: hidden;
-  flex: 1;
 }
 
 .video-container
@@ -165,7 +266,14 @@ html, body, .app, .sign-in-page
   display: flex;
   justify-content: center;
   width: 100%;
-  height: calc(100vh - 250px);
+}
+
+@media screen and (min-width: 1100px)
+{
+  .video-container
+  {
+    height: calc(100vh - 250px);
+  }
 }
 
 video
@@ -179,16 +287,24 @@ video
 {
   display: flex;  
   justify-content: space-between;
-  margin: 15px auto;
+  margin: 10px auto 0 auto;
   width: 75%;
   height: 100%;
+}
+
+@media screen and (max-width: 1000px)
+{
+  .video-info
+  {
+    width: 90%;
+  }
 }
 
 .video-stat
 {
   color: white;
   margin: 10px 0;
-  font-size: 25px;
+  font-size: 1.65rem;
   font-family: sans-serif;
 }
 
@@ -207,16 +323,34 @@ video
   transition: background 0.15s;
 }
 
+.video-like-button:hover
+{
+  background: rgba(0, 0, 0, 0.25);
+}
+
 .fa-thumbs-up
 {
   color: white;
   margin-right: 15px;
-  font-size: 25px;
+  font-size: 1.65rem;
 }
 
-.video-like-button:hover
+@media screen and (max-width: 550px)
 {
-  background: rgba(0, 0, 0, 0.25);
+  .video-stat
+  {
+    font-size: 1.2rem;
+  }
+
+  .video-like-button
+  {
+    padding: 0 15px;
+  }
+
+  .fa-thumbs-up
+  {
+    font-size: 1.4rem;
+  }
 }
 
 .upload-video-page
@@ -238,19 +372,15 @@ video
 
 .select-file-button
 {
-  background: white;
+  background: rgb(240, 240, 240);
+  color: black;
   margin-bottom: 20px;
-  padding: 10px 25px;
-  border: none;
-  outline: none;
-  border-radius: 10px;
-  font-size: 25px;
-  transition: background 0.15s;
+  font-size: 1.5rem;
 }
 
 .select-file-button:hover
 {
-  background: rgb(235, 235, 235);
+  background: rgb(210, 210, 210);
 }
 
 .file-input
@@ -260,11 +390,12 @@ video
 
 .video-title-input
 {  
+  width: 350px;
   padding: 10px 15px;
   border: 3px solid none;
   outline: none;
   border-radius: 10px;
-  font-size: 25px;
+  font-size: 1.65rem;
 }
 
 .video-title-input::placeholder
@@ -274,20 +405,7 @@ video
 
 .post-video-button
 {
-  background: red;
-  color: white;
-  margin-top: 20px;
-  padding: 15px 35px;
-  border: none;
-  outline: none;
-  border-radius: 10px;
-  font-size: 25px;
-  transition: background 0.15s;
-}
-
-.post-video-button:hover
-{
-  background: rgb(210, 0, 0);
+  margin-top: 30px;
 }
 
 .uploading-video-modal
@@ -322,7 +440,7 @@ video
 .uploading-video-text
 {
   color: white;
-  font-size: 30px;
+  font-size: 2rem;
   font-family: sans-serif;
 }
 
