@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/youtube-clone/static/css/main.57a47d96.chunk.css",
-    "main.js": "/youtube-clone/static/js/main.0a9ffa27.chunk.js",
-    "main.js.map": "/youtube-clone/static/js/main.0a9ffa27.chunk.js.map",
-    "runtime-main.js": "/youtube-clone/static/js/runtime-main.9415fb1e.js",
-    "runtime-main.js.map": "/youtube-clone/static/js/runtime-main.9415fb1e.js.map",
-    "static/js/2.8b4191c9.chunk.js": "/youtube-clone/static/js/2.8b4191c9.chunk.js",
-    "static/js/2.8b4191c9.chunk.js.map": "/youtube-clone/static/js/2.8b4191c9.chunk.js.map",
-    "static/js/3.2e6abc22.chunk.js": "/youtube-clone/static/js/3.2e6abc22.chunk.js",
-    "static/js/3.2e6abc22.chunk.js.map": "/youtube-clone/static/js/3.2e6abc22.chunk.js.map",
+    "main.css": "/youtube-clone/static/css/main.f98c80f2.chunk.css",
+    "main.js": "/youtube-clone/static/js/main.9401fd0e.chunk.js",
+    "main.js.map": "/youtube-clone/static/js/main.9401fd0e.chunk.js.map",
+    "runtime-main.js": "/youtube-clone/static/js/runtime-main.be89836d.js",
+    "runtime-main.js.map": "/youtube-clone/static/js/runtime-main.be89836d.js.map",
+    "static/js/2.e9eacfa7.chunk.js": "/youtube-clone/static/js/2.e9eacfa7.chunk.js",
+    "static/js/2.e9eacfa7.chunk.js.map": "/youtube-clone/static/js/2.e9eacfa7.chunk.js.map",
+    "static/js/3.08f7381a.chunk.js": "/youtube-clone/static/js/3.08f7381a.chunk.js",
+    "static/js/3.08f7381a.chunk.js.map": "/youtube-clone/static/js/3.08f7381a.chunk.js.map",
     "index.html": "/youtube-clone/index.html",
-    "static/css/main.57a47d96.chunk.css.map": "/youtube-clone/static/css/main.57a47d96.chunk.css.map",
-    "static/js/2.8b4191c9.chunk.js.LICENSE.txt": "/youtube-clone/static/js/2.8b4191c9.chunk.js.LICENSE.txt"
+    "static/css/main.f98c80f2.chunk.css.map": "/youtube-clone/static/css/main.f98c80f2.chunk.css.map",
+    "static/js/2.e9eacfa7.chunk.js.LICENSE.txt": "/youtube-clone/static/js/2.e9eacfa7.chunk.js.LICENSE.txt",
+    "static/media/noThumbnailFallback.21f68d4a.png": "/youtube-clone/static/media/noThumbnailFallback.21f68d4a.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.9415fb1e.js",
-    "static/js/2.8b4191c9.chunk.js",
-    "static/css/main.57a47d96.chunk.css",
-    "static/js/main.0a9ffa27.chunk.js"
+    "static/js/runtime-main.be89836d.js",
+    "static/js/2.e9eacfa7.chunk.js",
+    "static/css/main.f98c80f2.chunk.css",
+    "static/js/main.9401fd0e.chunk.js"
   ]
 }
