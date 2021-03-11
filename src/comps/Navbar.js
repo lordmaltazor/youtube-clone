@@ -16,7 +16,7 @@ export default function Navbar({ setPage }) {
             <button className="navbar-button navbar-sign-out-button" onClick={() => auth.signOut()}>Sign out</button>
             <button className="button navbar-upload-button" onClick={() => setPage(2)}>Upload</button>
 
-            <button className="button navbar-mobile-button" onClick={toggleMobileMenu}>
+            <button className="navbar-mobile-button" onClick={toggleMobileMenu}>
                 <i className="fas fa-bars"></i>
             </button>
 

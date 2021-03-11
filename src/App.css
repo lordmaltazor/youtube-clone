@@ -139,13 +139,23 @@ html, body, .app, .sign-in-page
 
 .navbar-mobile-button
 {
+  background: none;
+  color: white;
   justify-content: center;
   align-items: center;
   width: 60px;
   height: 60px;
-  margin-right: 20px;
+  margin-right: 10px;
   padding: 0;
+  border: none;
+  outline: none;
   font-size: 1.75rem;
+  transition: color 0.15s;
+}
+
+.navbar-mobile-button:hover
+{
+  color: rgb(240, 240, 240);
 }
 
 .mobile-menu
@@ -155,7 +165,7 @@ html, body, .app, .sign-in-page
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -210,7 +220,7 @@ html, body, .app, .sign-in-page
 
   .navbar-title
   {
-    margin-left: 15px;
+    margin-left: 10px;
     font-size: 1.65rem;
   }
 
@@ -400,12 +410,12 @@ video
 {
   .video-stat
   {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 
   .video-like-button
   {
-    padding: 0 15px;
+    padding: 0 10px;
   }
 
   .fa-thumbs-up
